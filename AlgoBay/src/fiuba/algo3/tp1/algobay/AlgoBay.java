@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package algobay;
+package fiuba.algo3.tp1.algobay;
 
 /**
  *
