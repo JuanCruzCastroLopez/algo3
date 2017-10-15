@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
+import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
 
 public class AlgoBayTest {
 

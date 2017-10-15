@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author jccastrolopez
  */
-public class CuponDescuentoTest {
+public class CuponTest {
     
-    public CuponDescuentoTest() {
+    public CuponTest() {
     }
     
     @BeforeClass
