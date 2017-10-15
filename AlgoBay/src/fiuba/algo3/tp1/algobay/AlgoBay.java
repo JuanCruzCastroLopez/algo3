@@ -18,7 +18,7 @@ public class AlgoBay {
         return this.productos.size();
     }
 
-    public Producto agregarProductoConPrecio(String nombreProducto, int precioProducto) {
+    public Producto agregarProductoConPrecio(String nombreProducto, int precioProducto) throws PrecioProductoInvalidoException, NombreProductoVacioException {
         Producto producto = new Producto(nombreProducto, precioProducto);
         productos.add(producto);
         

@@ -5,32 +5,45 @@
  */
 package fiuba.algo3.tp1.algobay;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author jccastrolopez
  */
 public class ProductoTest {
-    
-    public ProductoTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
+
+    @Test(expected = PrecioProductoInvalidoException.class)
+    public void testCrearProductoConPrecioCeroLanzaExcepecion() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+        Producto producto = new Producto("Spinner", 0);
+        Assert.assertNotNull(producto);
     }
 
+    @Test(expected = PrecioProductoInvalidoException.class)
+    public void testCrearProductoConPrecioNegativoLanzaExcepecion() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+        Producto producto = new Producto("Spinner", 0);
+        Assert.assertNotNull(producto);
+    }
+
+    @Test(expected = NombreProductoVacioException.class)
+    public void testCrearProductoConNombreVacioLanzaExcepecion() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+        Producto producto = new Producto("", 10);
+        Assert.assertNotNull(producto);
+    }
+    
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testProductoConNombreSpinnerDevuelveFalseAlPreguntarSiSuNombreEsXbox() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+        Producto producto = new Producto("Spinner", 20);
+        Assert.assertFalse(producto.esProducto("xBox"));
+    }
+    
+        @Test
+    public void testProductoConNombreSpinnerDevuelveTrueAlPreguntarSiSuNombreEsSpinner() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+        String nombreProducto = "Spinner";
+        
+        Producto producto = new Producto(nombreProducto, 20);
+        Assert.assertFalse(producto.esProducto(nombreProducto));
     }
     
 }

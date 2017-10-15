@@ -11,7 +11,7 @@ public class AlgoBayTest {
     private static final double DELTA = 1e-15;
 
     @Test
-    public void test01AgregarProductos() {
+    public void test01AgregarProductos() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
