@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
 import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
+import fiuba.algo3.tp1.algobay.compra.adicional.PorcentajeCuponInvalidoException;
 
 public class AlgoBayTest {
 
@@ -116,7 +117,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test07CuponDescuento() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+    public void test07CuponDescuento() throws PrecioProductoInvalidoException, NombreProductoVacioException, PorcentajeCuponInvalidoException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -134,7 +135,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test08CuponesNoSonAcumulablesValeElMayor() throws PrecioProductoInvalidoException, NombreProductoVacioException {
+    public void test08CuponesNoSonAcumulablesValeElMayor() throws PrecioProductoInvalidoException, NombreProductoVacioException, PorcentajeCuponInvalidoException {
 
         AlgoBay algoBay = new AlgoBay();
 
