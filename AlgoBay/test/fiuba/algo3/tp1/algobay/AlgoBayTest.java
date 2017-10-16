@@ -25,7 +25,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test02GetProducto() {
+    public void test02GetProducto() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -37,7 +37,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test03CompraSimple() {
+    public void test03CompraSimple() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -58,7 +58,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test04EnvioCuesta100() {
+    public void test04EnvioCuesta100() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -77,7 +77,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test05GarantiaCuesta10Porciento() {
+    public void test05GarantiaCuesta10Porciento() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -98,7 +98,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test06EnvioBonificadoComprasMayoresA5000() {
+    public void test06EnvioBonificadoComprasMayoresA5000() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -116,7 +116,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test07CuponDescuento() {
+    public void test07CuponDescuento() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
@@ -134,7 +134,7 @@ public class AlgoBayTest {
     }
 
     @Test
-    public void test08CuponesNoSonAcumulablesValeElMayor() {
+    public void test08CuponesNoSonAcumulablesValeElMayor() throws PrecioProductoInvalidoException, NombreProductoVacioException {
 
         AlgoBay algoBay = new AlgoBay();
 
