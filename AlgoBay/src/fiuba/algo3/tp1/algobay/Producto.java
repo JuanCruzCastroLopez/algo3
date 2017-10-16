@@ -19,6 +19,10 @@ public class Producto {
     public boolean esProducto(String nombreProducto) {
         return this.nombre.equals(nombreProducto);
     }
+
+    public int getPrecio() {
+        return this.precio;
+    }
     
     
     

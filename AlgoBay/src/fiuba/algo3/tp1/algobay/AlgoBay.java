@@ -4,6 +4,7 @@ import fiuba.algo3.tp1.algobay.compra.Compra;
 import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
 import fiuba.algo3.tp1.algobay.compra.adicional.Envio;
 import fiuba.algo3.tp1.algobay.compra.adicional.Garantia;
+import fiuba.algo3.tp1.algobay.compra.adicional.PorcentajeCuponInvalidoException;
 import java.util.ArrayList;
 
 public class AlgoBay {
@@ -68,7 +69,7 @@ public class AlgoBay {
         return compra;
     }
 
-    public Cupon crearCuponConPorcentaje(int porcentaje) {
+    public Cupon crearCuponConPorcentaje(int porcentaje) throws PorcentajeCuponInvalidoException {
         return new Cupon(porcentaje);
         
     }
