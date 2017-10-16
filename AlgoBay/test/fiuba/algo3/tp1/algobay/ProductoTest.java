@@ -43,14 +43,14 @@ public class ProductoTest {
         String nombreProducto = "Spinner";
         
         Producto producto = new Producto(nombreProducto, 20);
-        Assert.assertFalse(producto.esProducto(nombreProducto));
+        Assert.assertTrue(producto.esProducto(nombreProducto));
     }
     
     @Test
     public void testGetPrecioDevuelve10CuandoPrecioProductoEs10() throws PrecioProductoInvalidoException, NombreProductoVacioException {
         int precioProducto = 10;
         Producto producto = new Producto("Spinner", precioProducto);
-        Assert.assertFalse(producto.getPrecio() == precioProducto);
+        Assert.assertTrue(producto.getPrecio() == precioProducto);
     }
     
 }

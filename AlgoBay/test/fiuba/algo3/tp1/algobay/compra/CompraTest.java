@@ -3,6 +3,7 @@ package fiuba.algo3.tp1.algobay.compra;
 import fiuba.algo3.tp1.algobay.NombreProductoVacioException;
 import fiuba.algo3.tp1.algobay.PrecioProductoInvalidoException;
 import fiuba.algo3.tp1.algobay.Producto;
+import fiuba.algo3.tp1.algobay.compra.adicional.Envio;
 import fiuba.algo3.tp1.algobay.compra.adicional.Garantia;
 import org.junit.Assert;
 import org.junit.Test;
@@ -53,6 +54,7 @@ public class CompraTest {
         compra.agregarProducto(spinnerRojo);
         compra.agregarProducto(spinnerAzul);
         compra.agregarProducto(spinnerMetalico);
+        compra.agregarAdicional(new Envio());
 
         int precioProductos = spinnerRojo.getPrecio() + spinnerAzul.getPrecio() + spinnerMetalico.getPrecio();
 
@@ -79,7 +81,7 @@ public class CompraTest {
         compra.agregarProducto(spinnerMetalico);
         compra.agregarAdicional(new Garantia());
 
-        int precioProductos = spinnerRojo.getPrecio() + spinnerAzul.getPrecio() + spinnerMetalico.getPrecio();
+        int precioProductos = (int) ((spinnerRojo.getPrecio() + spinnerAzul.getPrecio() + spinnerMetalico.getPrecio()) * 1.1);
 
         Assert.assertTrue(compra.getPrecioTotal() == precioProductos);
     }
@@ -93,13 +95,13 @@ public class CompraTest {
 
         compra.agregarAdicional(new Garantia());
 
-        Assert.assertTrue(compra.getPrecioTotal() == spinnerMetalico.getPrecio());
+        Assert.assertTrue(compra.getPrecioTotal() == 11);
     }
 
     @Test
     public void testPrecioTotalEsIgualAcienCuandoNoHayProductosAgregadosPeroEsCompraConEnvio() throws PrecioProductoInvalidoException, NombreProductoVacioException {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Garantia());
+        compra.agregarAdicional(new Envio());
 
         Assert.assertTrue(compra.getPrecioTotal() == 100);
     }

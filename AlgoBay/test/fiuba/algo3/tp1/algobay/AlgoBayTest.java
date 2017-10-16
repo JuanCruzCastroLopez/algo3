@@ -113,7 +113,7 @@ public class AlgoBayTest {
 
         int precioConEnvioYGarantia = algoBay.getPrecioTotalDe(compraConEnvioYGarantia);
 
-        Assert.assertEquals(precioConEnvioYGarantia, (6000 * 1.1) + 0, DELTA);
+        Assert.assertEquals(precioConEnvioYGarantia, (int) (6000 * 1.1) + 0, DELTA);
     }
 
     @Test
@@ -153,7 +153,7 @@ public class AlgoBayTest {
         algoBay.agregarProductoEnCompra(productoZapatillaNike, compra);
 
         int precioConDescuento = algoBay.getPrecioTotalDe(compra);
-
+        
         Assert.assertEquals(precioConDescuento, 2000 * 0.7, DELTA);
     }
 }

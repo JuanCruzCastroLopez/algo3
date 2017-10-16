@@ -29,7 +29,6 @@ public class CuponTest {
         Assert.assertNotNull(cupon);
     }
 
-    @Test(expected = PorcentajeCuponInvalidoException.class)
     public void testActualizarPrecioDevuelve90CuandoPorcentaje10Yprecio100() throws PorcentajeCuponInvalidoException {
         //Lanza Excepcion
         Cupon cupon = new Cupon(90);
