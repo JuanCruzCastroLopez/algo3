@@ -11,7 +11,7 @@ public class AlgoBay {
 
     private ArrayList<Producto> productos;
 
-    public void AlgoBay() {
+    public AlgoBay() {
         this.productos = new ArrayList<>();
     }
 
@@ -21,13 +21,13 @@ public class AlgoBay {
 
     public Producto agregarProductoConPrecio(String nombreProducto, int precioProducto) throws PrecioProductoInvalidoException, NombreProductoVacioException {
         Producto producto = new Producto(nombreProducto, precioProducto);
-        productos.add(producto);
+        this.productos.add(producto);
         
         return producto;
     }
 
     public Producto getProducto(String nombreProducto) {
-        for (Producto producto : productos) {
+        for (Producto producto : this.productos) {
             if (producto.esProducto(nombreProducto)) {
                 return producto;
             }

@@ -2,24 +2,24 @@ package fiuba.algo3.tp1.algobay.compra.adicional;
 
 public class Cupon {
 
-    private final int descuento;
-    
+    private final float descuento;
+
     public Cupon(int porcentaje) throws PorcentajeCuponInvalidoException {
         if (porcentaje <= 0) {
             throw new PorcentajeCuponInvalidoException();
         }
-        this.descuento = porcentaje;
+        this.descuento = porcentaje / 100f;
     }
-    
-    public int getDescuento() {
+
+    public float getDescuento() {
         return this.descuento;
     }
-    
+
     public int actualizarPrecio(int precio) {
-        return precio - (precio * descuento);
+        return (int) (precio - (precio * this.descuento));
     }
-    
+
     public boolean menorA(Cupon cupon) {
-        return descuento < cupon.getDescuento();
+        return this.descuento < cupon.getDescuento();
     }
 }

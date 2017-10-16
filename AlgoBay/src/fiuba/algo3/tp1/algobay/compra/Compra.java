@@ -27,7 +27,7 @@ public class Compra {
             precio = adicional.actualizarPrecio(precio);
         }
         if (this.existeCupon()) {
-            precio = cupon.actualizarPrecio(precio);
+            precio = this.cupon.actualizarPrecio(precio);
         }
         return precio;
     }
