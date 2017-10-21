@@ -3,8 +3,6 @@ package fiuba.algo3.tp1.algobay.compra;
 import fiuba.algo3.tp1.algobay.NombreProductoVacioException;
 import fiuba.algo3.tp1.algobay.PrecioProductoInvalidoException;
 import fiuba.algo3.tp1.algobay.Producto;
-import fiuba.algo3.tp1.algobay.compra.adicional.Envio;
-import fiuba.algo3.tp1.algobay.compra.adicional.Garantia;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -54,7 +52,7 @@ public class CompraTest {
         compra.agregarProducto(spinnerRojo);
         compra.agregarProducto(spinnerAzul);
         compra.agregarProducto(spinnerMetalico);
-        compra.agregarAdicional(new Envio());
+        compra.agregarEnvio();
 
         int precioProductos = spinnerRojo.getPrecio() + spinnerAzul.getPrecio() + spinnerMetalico.getPrecio();
 
@@ -64,7 +62,7 @@ public class CompraTest {
     @Test
     public void testPrecioTotalEsIgualAceroCuandoNoHayProductosAgregadosYtieneGarantia() {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Garantia());
+        compra.agregarGarantia();
 
         Assert.assertTrue(compra.getPrecioTotal() == 0);
     }
@@ -79,7 +77,7 @@ public class CompraTest {
         compra.agregarProducto(spinnerRojo);
         compra.agregarProducto(spinnerAzul);
         compra.agregarProducto(spinnerMetalico);
-        compra.agregarAdicional(new Garantia());
+        compra.agregarGarantia();
 
         int precioProductos = (int) ((spinnerRojo.getPrecio() + spinnerAzul.getPrecio() + spinnerMetalico.getPrecio()) * 1.1);
 
@@ -93,7 +91,7 @@ public class CompraTest {
 
         compra.agregarProducto(spinnerMetalico);
 
-        compra.agregarAdicional(new Garantia());
+        compra.agregarGarantia();
 
         Assert.assertTrue(compra.getPrecioTotal() == 11);
     }
@@ -101,7 +99,7 @@ public class CompraTest {
     @Test
     public void testPrecioTotalEsIgualAcienCuandoNoHayProductosAgregadosPeroEsCompraConEnvio() throws PrecioProductoInvalidoException, NombreProductoVacioException {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Envio());
+        compra.agregarEnvio();
 
         Assert.assertTrue(compra.getPrecioTotal() == 100);
     }

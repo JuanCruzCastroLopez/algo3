@@ -1,15 +1,13 @@
 package fiuba.algo3.tp1.algobay;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
-import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
-import fiuba.algo3.tp1.algobay.compra.adicional.Envio;
-import fiuba.algo3.tp1.algobay.compra.adicional.Garantia;
-import fiuba.algo3.tp1.algobay.compra.adicional.PorcentajeCuponInvalidoException;
+import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponConDescuento;
+import fiuba.algo3.tp1.algobay.compra.modificador.cupon.PorcentajeCuponInvalidoException;
 import java.util.ArrayList;
 
 public class AlgoBay {
 
-    private ArrayList<Producto> productos;
+    private final ArrayList<Producto> productos;
 
     public AlgoBay() {
         this.productos = new ArrayList<>();
@@ -49,32 +47,32 @@ public class AlgoBay {
 
     public Compra crearNuevaCompraConEnvio() {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Envio());
+        compra.agregarEnvio();
         
         return compra;
     }
 
     public Compra crearNuevaCompraConGarantia() {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Garantia());
+        compra.agregarGarantia();
         
         return compra;
     }
 
     Compra crearNuevaCompraConEnvioYGarantia() {
         Compra compra = new Compra();
-        compra.agregarAdicional(new Garantia());
-        compra.agregarAdicional(new Envio());
+        compra.agregarGarantia();
+        compra.agregarEnvio();
         
         return compra;
     }
 
-    public Cupon crearCuponConPorcentaje(int porcentaje) throws PorcentajeCuponInvalidoException {
-        return new Cupon(porcentaje);
+    public CuponConDescuento crearCuponConPorcentaje(int porcentaje) throws PorcentajeCuponInvalidoException {
+        return new CuponConDescuento(porcentaje);
         
     }
 
-    public void agregarCuponEnCompra(Cupon cupon, Compra compra) {
+    public void agregarCuponEnCompra(CuponConDescuento cupon, Compra compra) {
         compra.agregarCupon(cupon);
     }
 }

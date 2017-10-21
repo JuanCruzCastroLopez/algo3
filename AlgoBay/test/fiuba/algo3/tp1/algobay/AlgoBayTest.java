@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
-import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
-import fiuba.algo3.tp1.algobay.compra.adicional.PorcentajeCuponInvalidoException;
+import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponConDescuento;
+import fiuba.algo3.tp1.algobay.compra.modificador.cupon.PorcentajeCuponInvalidoException;
 
 public class AlgoBayTest {
 
@@ -124,7 +124,7 @@ public class AlgoBayTest {
         Producto productoZapatillaNike = algoBay.agregarProductoConPrecio("Zapatilla Nike Air", 2000);
 
         Compra compraConEnvio = algoBay.crearNuevaCompraConEnvio();
-        Cupon cupon20Porciento = algoBay.crearCuponConPorcentaje(20);
+        CuponConDescuento cupon20Porciento = algoBay.crearCuponConPorcentaje(20);
 
         algoBay.agregarCuponEnCompra(cupon20Porciento, compraConEnvio);
         algoBay.agregarProductoEnCompra(productoZapatillaNike, compraConEnvio);
@@ -142,9 +142,9 @@ public class AlgoBayTest {
         Producto productoZapatillaNike = algoBay.agregarProductoConPrecio("Zapatilla Nike Air", 2000);
 
         Compra compra = algoBay.crearNuevaCompra();
-        Cupon cupon20Porciento = algoBay.crearCuponConPorcentaje(20);
-        Cupon cupon25Porciento = algoBay.crearCuponConPorcentaje(25);
-        Cupon cupon30Porciento = algoBay.crearCuponConPorcentaje(30);
+        CuponConDescuento cupon20Porciento = algoBay.crearCuponConPorcentaje(20);
+        CuponConDescuento cupon25Porciento = algoBay.crearCuponConPorcentaje(25);
+        CuponConDescuento cupon30Porciento = algoBay.crearCuponConPorcentaje(30);
 
         algoBay.agregarCuponEnCompra(cupon20Porciento, compra);
         algoBay.agregarCuponEnCompra(cupon25Porciento, compra);

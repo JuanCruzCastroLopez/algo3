@@ -1,10 +1,10 @@
-package fiuba.algo3.tp1.algobay.compra.adicional;
+package fiuba.algo3.tp1.algobay.compra.modificador.cupon;
 
-public class Cupon {
+public class CuponConDescuento implements Cupon {
 
     private final float descuento;
 
-    public Cupon(int porcentaje) throws PorcentajeCuponInvalidoException {
+    public CuponConDescuento(int porcentaje) throws PorcentajeCuponInvalidoException {
         if (porcentaje <= 0) {
             throw new PorcentajeCuponInvalidoException();
         }
@@ -15,11 +15,14 @@ public class Cupon {
         return this.descuento;
     }
 
-    public int actualizarPrecio(int precio) {
+    @Override
+    public int modificarPrecio(int precio) {
         return (int) (precio - (precio * this.descuento));
     }
 
-    public boolean menorA(Cupon cupon) {
+    @Override
+    public boolean menorA(CuponConDescuento cupon) {
         return this.descuento < cupon.getDescuento();
     }
+
 }
