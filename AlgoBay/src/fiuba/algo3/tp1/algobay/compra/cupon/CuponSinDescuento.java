@@ -1,4 +1,4 @@
-package fiuba.algo3.tp1.algobay.compra.modificador.cupon;
+package fiuba.algo3.tp1.algobay.compra.cupon;
 
 public class CuponSinDescuento implements Cupon {
 

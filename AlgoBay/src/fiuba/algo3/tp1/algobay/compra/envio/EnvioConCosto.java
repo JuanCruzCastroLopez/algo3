@@ -1,4 +1,4 @@
-package fiuba.algo3.tp1.algobay.compra.modificador.envio;
+package fiuba.algo3.tp1.algobay.compra.envio;
 
 public class EnvioConCosto implements Envio {
 

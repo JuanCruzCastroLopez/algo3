@@ -1,5 +1,6 @@
-package fiuba.algo3.tp1.algobay.compra.modificador.envio;
+package fiuba.algo3.tp1.algobay.compra.envio;
 
+import fiuba.algo3.tp1.algobay.compra.envio.EnvioSinCosto;
 import org.junit.Assert;
 import org.junit.Test;
 

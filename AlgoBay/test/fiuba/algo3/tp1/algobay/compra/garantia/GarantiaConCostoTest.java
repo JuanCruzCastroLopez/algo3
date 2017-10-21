@@ -1,5 +1,6 @@
-package fiuba.algo3.tp1.algobay.compra.modificador.garantia;
+package fiuba.algo3.tp1.algobay.compra.garantia;
 
+import fiuba.algo3.tp1.algobay.compra.garantia.GarantiaConCosto;
 import org.junit.Assert;
 import org.junit.Test;
 

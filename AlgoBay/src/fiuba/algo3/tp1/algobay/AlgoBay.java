@@ -1,8 +1,8 @@
 package fiuba.algo3.tp1.algobay;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponConDescuento;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.PorcentajeCuponInvalidoException;
+import fiuba.algo3.tp1.algobay.compra.cupon.CuponConDescuento;
+import fiuba.algo3.tp1.algobay.compra.cupon.PorcentajeCuponInvalidoException;
 import java.util.ArrayList;
 
 public class AlgoBay {

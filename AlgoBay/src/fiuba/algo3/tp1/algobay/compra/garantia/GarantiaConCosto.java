@@ -1,4 +1,4 @@
-package fiuba.algo3.tp1.algobay.compra.modificador.garantia;
+package fiuba.algo3.tp1.algobay.compra.garantia;
 
 public class GarantiaConCosto implements Garantia {
 

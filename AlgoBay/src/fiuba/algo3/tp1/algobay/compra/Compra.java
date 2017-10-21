@@ -1,15 +1,15 @@
 package fiuba.algo3.tp1.algobay.compra;
 
-import fiuba.algo3.tp1.algobay.compra.modificador.garantia.GarantiaConCosto;
-import fiuba.algo3.tp1.algobay.compra.modificador.envio.EnvioConCosto;
-import fiuba.algo3.tp1.algobay.compra.modificador.garantia.GarantiaSinCosto;
-import fiuba.algo3.tp1.algobay.compra.modificador.envio.EnvioSinCosto;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponSinDescuento;
+import fiuba.algo3.tp1.algobay.compra.garantia.GarantiaConCosto;
+import fiuba.algo3.tp1.algobay.compra.envio.EnvioConCosto;
+import fiuba.algo3.tp1.algobay.compra.garantia.GarantiaSinCosto;
+import fiuba.algo3.tp1.algobay.compra.envio.EnvioSinCosto;
+import fiuba.algo3.tp1.algobay.compra.cupon.CuponSinDescuento;
 import fiuba.algo3.tp1.algobay.Producto;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponConDescuento;
-import fiuba.algo3.tp1.algobay.compra.modificador.envio.Envio;
-import fiuba.algo3.tp1.algobay.compra.modificador.garantia.Garantia;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.Cupon;
+import fiuba.algo3.tp1.algobay.compra.cupon.CuponConDescuento;
+import fiuba.algo3.tp1.algobay.compra.envio.Envio;
+import fiuba.algo3.tp1.algobay.compra.garantia.Garantia;
+import fiuba.algo3.tp1.algobay.compra.cupon.Cupon;
 import java.util.ArrayList;
 
 public class Compra {

@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.tp1.algobay.compra.Compra;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.CuponConDescuento;
-import fiuba.algo3.tp1.algobay.compra.modificador.cupon.PorcentajeCuponInvalidoException;
+import fiuba.algo3.tp1.algobay.compra.cupon.CuponConDescuento;
+import fiuba.algo3.tp1.algobay.compra.cupon.PorcentajeCuponInvalidoException;
 
 public class AlgoBayTest {
 
