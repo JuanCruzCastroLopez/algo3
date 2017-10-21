@@ -1,21 +1,29 @@
 package fiuba.algo3.tp1.algobay.compra;
 
 import fiuba.algo3.tp1.algobay.Producto;
-import fiuba.algo3.tp1.algobay.compra.adicional.Adicional;
 import fiuba.algo3.tp1.algobay.compra.adicional.Cupon;
 import fiuba.algo3.tp1.algobay.compra.adicional.Envio;
+import fiuba.algo3.tp1.algobay.compra.adicional.Garantia;
 import java.util.ArrayList;
 
 public class Compra {
 
     private final ArrayList<Producto> productos;
-    private final ArrayList<Adicional> adicionales;
     private Cupon cupon;
+    private Envio envio;
+    private Garantia garantia;
 
     public Compra() {
         this.productos = new ArrayList<>();
-        this.adicionales = new ArrayList<>();
-        this.cupon = null;
+        this.cupon = new CuponSinDescuento();
+        this.envio = new EnvioSinCosto();
+        this.garantia = new GarantiaSinCosto();
+    }
+
+    public int actualizarPrecioFinal(int precio) {
+        precio = this.garantia.actualizarPrecio(precio);
+        precio = this.envio.actualizarPrecio(precio);
+        return this.cupon.actualizarPrecio(precio);
     }
 
     public int getPrecioTotal() {
@@ -23,29 +31,23 @@ public class Compra {
         for (Producto producto : this.productos) {
             precio += producto.getPrecio();
         }
-        for (Adicional adicional : this.adicionales) {
-            precio = adicional.actualizarPrecio(precio);
-        }
-        if (this.existeCupon()) {
-            precio = this.cupon.actualizarPrecio(precio);
-        }
-        return precio;
+        return actualizarPrecioFinal(precio);
     }
 
     public void agregarProducto(Producto producto) {
         this.productos.add(producto);
     }
 
-    public void agregarAdicional(Adicional adicional) {
-        this.adicionales.add(adicional);
+    public void agregarEnvio() {
+        this.envio = new EnvioConCosto();
     }
 
-    private boolean existeCupon() {
-        return this.cupon != null;
+    public void agregarGarantia() {
+        this.garantia = new GarantiaConCosto();
     }
 
-    public void agregarCupon(Cupon nuevoCupon) {
-        if (this.cupon == null || this.cupon.menorA(nuevoCupon)) {
+    public void agregarCupon(Cupon nuevoCupon) {            //TODO: Refactor - el cupon lo crea la compra
+        if (this.cupon.menorA(nuevoCupon)) {
             this.cupon = nuevoCupon;
         }
     }
